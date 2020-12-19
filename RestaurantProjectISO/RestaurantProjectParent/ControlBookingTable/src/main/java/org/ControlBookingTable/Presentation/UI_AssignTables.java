@@ -1,4 +1,4 @@
-package org.Presentation;
+package org.ControlBookingTable.Presentation;
 
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
@@ -18,9 +18,9 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.border.TitledBorder;
 
-import org.Domain.States;
-import org.Domain.Table;
-import org.Domain.Booking;
+import org.ControlBookingTable.Domain.States;
+import org.ControlBookingTable.Domain.Table;
+import org.ControlBookingTable.Domain.Booking;
 
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;

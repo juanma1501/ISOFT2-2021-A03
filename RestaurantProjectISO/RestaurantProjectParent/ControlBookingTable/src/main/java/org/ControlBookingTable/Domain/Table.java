@@ -1,4 +1,4 @@
-package org.Domain;
+package org.ControlBookingTable.Domain;
 
 public class Table {
 	private int _idTable;

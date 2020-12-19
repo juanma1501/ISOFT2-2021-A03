@@ -1,4 +1,4 @@
-package org.Presentation;
+package org.ControlBookingTable.Presentation;
 
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
@@ -9,9 +9,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import org.Domain.States;
-import org.Domain.Table;
-import org.Domain.Booking;
+import org.ControlBookingTable.Domain.States;
+import org.ControlBookingTable.Domain.Table;
+import org.ControlBookingTable.Domain.Booking;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.Timestamp;

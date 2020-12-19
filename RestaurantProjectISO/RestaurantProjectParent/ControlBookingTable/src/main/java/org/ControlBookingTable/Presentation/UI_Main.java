@@ -1,4 +1,4 @@
-package org.Presentation;
+package org.ControlBookingTable.Presentation;
 
 import java.awt.EventQueue;
 import java.awt.GridBagConstraints;

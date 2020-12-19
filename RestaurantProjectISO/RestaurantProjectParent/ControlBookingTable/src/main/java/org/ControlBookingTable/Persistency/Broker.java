@@ -1,4 +1,4 @@
-package org.Persistency;
+package org.ControlBookingTable.Persistency;
 
 import java.sql.*;
 

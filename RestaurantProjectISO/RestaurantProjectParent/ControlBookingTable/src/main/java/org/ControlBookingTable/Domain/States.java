@@ -1,5 +1,5 @@
 
-package org.Domain;
+package org.ControlBookingTable.Domain;
 
 public enum States {
 	UNOCCUPIED, BOOKED, OCCUPIED, PROCESSING, WAITING_FOOD, SERVED, WAITING_BILL, PAYING, PREPARATION

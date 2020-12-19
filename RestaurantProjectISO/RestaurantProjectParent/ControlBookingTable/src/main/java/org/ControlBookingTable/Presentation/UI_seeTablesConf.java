@@ -1,4 +1,4 @@
-package org.Presentation;
+package org.ControlBookingTable.Presentation;
 
 import javax.swing.JPanel;
 
@@ -12,7 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import org.Domain.Table;
+import org.ControlBookingTable.Domain.Table;
 
 @SuppressWarnings({ "unused", "serial" })
 public class UI_seeTablesConf extends JPanel {

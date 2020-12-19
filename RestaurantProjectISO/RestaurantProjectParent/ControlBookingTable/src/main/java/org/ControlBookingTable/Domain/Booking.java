@@ -1,6 +1,6 @@
-package org.Domain;
+package org.ControlBookingTable.Domain;
 
-import org.Domain.Table;
+import org.ControlBookingTable.Domain.Table;
 
 public class Booking {
 	private String _name;
