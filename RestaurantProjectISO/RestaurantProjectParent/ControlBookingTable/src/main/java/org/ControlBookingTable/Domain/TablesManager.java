@@ -36,8 +36,10 @@ public class TablesManager {
 	public boolean update(Table aTable) {
 		boolean done = false;
 		try {
-			Broker.getInstance().update("UPDATE mesas SET comensales=" + aTable.getClients() + ", " + "estado='"
-					+ aTable.getState() + "' WHERE idMesa = " + aTable.getIdTable() + ";");
+			Broker.getInstance()
+					.update("UPDATE mesas SET comensales=" + aTable.getClients() + ", " + "estado='" + aTable.getState()
+							+ "', horaEstado='" + aTable.getStateTime() + "' WHERE idMesa = " + aTable.getIdTable()
+							+ ";");
 			done = true;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -51,7 +53,7 @@ public class TablesManager {
 		boolean done = false;
 		try {
 			Broker.getInstance().update("INSERT INTO mesas VALUES(" + aTable.getIdTable() + "," + aTable.getClients()
-					+ ",'" + aTable.getState() + "');");
+					+ ",'" + aTable.getState() + "','" + aTable.getStateTime() + "');");
 			done = true;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -70,6 +72,7 @@ public class TablesManager {
 				aTable.setClients(result.getInt(2));
 				States state = States.valueOf(result.getString(3));
 				aTable.setState(state);
+				aTable.setStateTime(result.getString(4));
 				done = true;
 			}
 		} catch (SQLException e) {
@@ -91,7 +94,7 @@ public class TablesManager {
 			while (result.next()) {
 
 				States state = States.valueOf(result.getString(3));
-				table = new Table(result.getInt(1), result.getInt(2), state);
+				table = new Table(result.getInt(1), result.getInt(2), state, result.getString(4));
 				this._tablesList.add(table);
 				done = true;
 			}
