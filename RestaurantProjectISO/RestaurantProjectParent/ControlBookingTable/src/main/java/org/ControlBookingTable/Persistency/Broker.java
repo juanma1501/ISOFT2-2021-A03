@@ -33,11 +33,11 @@ public class Broker {
 		PreparedStatement stmt = mBD.prepareStatement(SQL);
 		int res = stmt.executeUpdate();
 		stmt.close();
-		desconectar();
 		return res;
 	}
 
 	public ResultSet read(String SQL) throws SQLException, Exception {
+		connect();
 		PreparedStatement stmt = mBD.prepareStatement(SQL);
 		ResultSet resultado = stmt.executeQuery(SQL);
 		return resultado;
