@@ -31,10 +31,14 @@ public class TableTest {
 	@Test
 	public void testNewTable() {
 		try {
-			Table table = new Table(1,6,States.UNOCCUPIED);
+			Table table = new Table(1,6,States.UNOCCUPIED, "23/10/18 23:00:00");
 		}catch(Exception e) {
 			assumeNoException(e);
 		}
+	}
+	@Test(expected = Exception.class)
+	public void testNewTable2() throws Exception {
+			Table table = new Table(-1,-6,States.UNOCCUPIED, "23/10/18 23:00:00");
 	}
 	@Test
 	public void testSetIdTable() throws Exception{
