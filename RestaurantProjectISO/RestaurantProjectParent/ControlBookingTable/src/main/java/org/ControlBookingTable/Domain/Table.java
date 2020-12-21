@@ -24,7 +24,7 @@ public class Table {
 
 		SimpleDateFormat date_formatter = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 		date_formatter.setLenient(false);
-		date_formatter.parse(_stateTime);
+		date_formatter.parse(aStateTime);
 
 		setIdTable(aIdTable);
 		setClients(aClients);
@@ -91,7 +91,7 @@ public class Table {
 	public void setStateTime(String aStateTime) throws ParseException, java.text.ParseException {
 		SimpleDateFormat date_formatter = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 		date_formatter.setLenient(false);
-		date_formatter.parse(this._stateTime);
+		date_formatter.parse(aStateTime);
 		this._stateTime = aStateTime;
 	}
 

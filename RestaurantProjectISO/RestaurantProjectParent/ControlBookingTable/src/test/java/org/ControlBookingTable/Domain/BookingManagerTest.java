@@ -21,7 +21,7 @@ class BookingManagerTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		table= new Table (1,6,States.UNOCCUPIED);
+		table= new Table (1,6,States.UNOCCUPIED,"23/10/19 21:08:00");
 	}
 
 	@AfterEach
