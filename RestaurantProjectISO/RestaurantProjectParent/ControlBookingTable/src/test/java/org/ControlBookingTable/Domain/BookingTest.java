@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import static org.junit.Assume.assumeNoException;
 
-import java.util.Date;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -41,7 +40,7 @@ public class BookingTest {
 	@Test
 	public void testBooking() throws Exception{
 		try {
-			Booking b = new Booking("Pablo",4,1,table,"Lunch",1);
+			Booking b = new Booking("Pablo",-4,-7,table,"Lunch",-5);
 		}catch(Exception e) {
 			assumeNoException(e);
 		}
@@ -49,7 +48,7 @@ public class BookingTest {
 	@Test
 	public void testBooking2() throws Exception{
 		try {
-			Booking b = new Booking("Pablo",-6,-6,table, "Lunch", -1);
+			Booking b = new Booking("",4,2,table, "Dinner", 5);
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -58,7 +57,70 @@ public class BookingTest {
 	@Test
 	public void testBooking3() throws Exception{
 		try {
-			Booking b = new Booking("",-6,-6,table, "", -1);
+			Booking b = new Booking("Pablo",0,2,table, "", 0);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@Test
+	public void testBooking4() throws Exception{
+		try {
+			Booking b = new Booking("",4,1,table, "Dinner", -5);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@Test
+	public void testBooking5() throws Exception{
+		try {
+			Booking b = new Booking("Pablo",-4,-7,table, "Lunch", 5);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@Test
+	public void testBooking6() throws Exception{
+		try {
+			Booking b = new Booking("Pablo",0,-7,table, "Dinner", -5);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@Test
+	public void testBooking7() throws Exception{
+		try {
+			Booking b = new Booking("Pablo",4,2,table, "Lunch", 5);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@Test
+	public void testBooking8() throws Exception{
+		try {
+			Booking b = new Booking("",-4,1,table, "Dinner", -5);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@Test
+	public void testBooking9() throws Exception{
+		try {
+			Booking b = new Booking("Pablo",4,1,table, "Lunch", 5);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@Test
+	public void testBooking10() throws Exception{
+		try {
+			Booking b = new Booking("Pablo",-4,-7,table, "Lunch", 0);
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -69,26 +131,45 @@ public class BookingTest {
 	public void testSetGet_name() throws Exception{
 		Booking b = new Booking();
 		try {
-			b.set_name("pablo");
+			b.set_name("Pablo");
 			
 		}catch(Exception e) {
 			assumeNoException(e);
 		}
-		assertEquals(b.get_name(), "pablo");
+		assertEquals(b.get_name(), "Pablo");
 	}
-	
+	public void testSetGet_name2() throws Exception{
+		Booking b = new Booking();
+		try {
+			b.set_name("");
+			
+		}catch(Exception e) {
+			assumeNoException(e);
+		}
+		assertEquals(b.get_name(), "");
+	}
 	@Test
 	public void testSetGet_guests() throws Exception{
 		Booking b = new Booking();
 		try {
-			b.set_guests(2);
+			b.set_guests(4);
 			
 		}catch(Exception e) {
 			assumeNoException(e);
 		}
-		assertEquals(b.get_guests(), 2);
+		assertEquals(b.get_guests(), 4);
 	}
-	
+	@Test
+	public void testSetGet_guests2() throws Exception{
+		Booking b = new Booking();
+		try {
+			b.set_guests(-4);
+			
+		}catch(Exception e) {
+			assumeNoException(e);
+		}
+		assertEquals(b.get_guests(), -4);
+	}
 	@Test
 	public void testSetGet_turn() throws Exception{
 		Booking b = new Booking();
@@ -101,25 +182,56 @@ public class BookingTest {
 		assertEquals(b.get_turn(), 2);
 	}
 	@Test
-	public void testSetGet_turnLunchDinner() throws Exception{
+	public void testSetGet_turn2() throws Exception{
 		Booking b = new Booking();
 		try {
-			b.set_turnLunchDinner("lunch");;
+			b.set_turn(-7);
 			
 		}catch(Exception e) {
 			assumeNoException(e);
 		}
-		assertEquals(b.get_turnLunchDinner(), "lunch");
+		assertEquals(b.get_turn(), -7);
 	}
-	
-	public void testSetGetidBooking() throws Exception{
+	@Test
+	public void testSetGet_turnLunchDinner() throws Exception{
 		Booking b = new Booking();
 		try {
-			b.setIdBooking(100);
+			b.set_turnLunchDinner("Lunch");;
+			
 		}catch(Exception e) {
 			assumeNoException(e);
 		}
-		assertEquals(b.getIdBooking(), 100);
+		assertEquals(b.get_turnLunchDinner(), "Lunch");
+	}
+	@Test
+	public void testSetGet_turnLunchDinner2() throws Exception{
+		Booking b = new Booking();
+		try {
+			b.set_turnLunchDinner("Dinner");;
+			
+		}catch(Exception e) {
+			assumeNoException(e);
+		}
+		assertEquals(b.get_turnLunchDinner(), "Dinner");
+	}
+	@Test
+	public void testSetGetidBooking() throws Exception{
+		Booking b = new Booking();
+		try {
+			b.setIdBooking(5);
+		}catch(Exception e) {
+			assumeNoException(e);
+		}
+		assertEquals(b.getIdBooking(), 5);
+	}
+	public void testSetGetidBooking2() throws Exception{
+		Booking b = new Booking();
+		try {
+			b.setIdBooking(-5);
+		}catch(Exception e) {
+			assumeNoException(e);
+		}
+		assertEquals(b.getIdBooking(), -5);
 	}
 	
 	
