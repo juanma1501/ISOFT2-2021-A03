@@ -28,32 +28,30 @@ public class UI_setTableStateTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test (expected = Exception.class)
+	@Test(expected = Exception.class)
 	public void testUI_SetTableState1() throws Exception {
 		UI_setTableState panel = new UI_setTableState(-6);
 	}
-	
-	@Test (expected = Exception.class)
+
+	@Test(expected = Exception.class)
 	public void testUI_SetTableState2() throws Exception {
 		UI_setTableState panel = new UI_setTableState(0);
 	}
-	
-	@Test 
+
+	@Test
 	public void testUI_SetTableState3() throws Exception {
 		try {
 			UI_setTableState panel = new UI_setTableState(3);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			assumeNoException(e);
 		}
 	}
-	
-	@Test 
+
+	@Test
 	public void testUI_SetTableState4() throws Exception {
 		UI_setTableState panel = new UI_setTableState(3);
 		panel.btnStates(States.PREPARATION);
 		assertEquals(panel.getLastState(), States.PREPARATION);
 	}
-	
-	
 
 }

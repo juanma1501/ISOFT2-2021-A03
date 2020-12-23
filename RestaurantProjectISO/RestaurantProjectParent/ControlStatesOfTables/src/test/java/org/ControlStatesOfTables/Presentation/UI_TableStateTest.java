@@ -33,9 +33,9 @@ public class UI_TableStateTest {
 		try {
 			window = new UI_TableState();
 			window.reload();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			assumeNoException(e);
 		}
 	}
-	
+
 }
