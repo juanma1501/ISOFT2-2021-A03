@@ -31,7 +31,7 @@ public class UI_seeBookingTest {
 	public void test() {
 		try {
 			UI_seeBooking book = new UI_seeBooking();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			assumeNoException(e);
 		}
 	}
