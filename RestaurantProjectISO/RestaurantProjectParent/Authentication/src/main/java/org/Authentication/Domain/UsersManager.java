@@ -6,18 +6,36 @@ import java.util.ArrayList;
 
 import org.ControlBookingTable.Persistency.Broker;
 
+/**
+ * The Class UsersManager.
+ */
 public class UsersManager {
 
+	/** The user list. */
 	private ArrayList<User> _userList;
 
+	/**
+	 * Instantiates a new users manager.
+	 */
 	public UsersManager() {
 		this._userList = new ArrayList<User>();
 	}
 
+	/**
+	 * Gets the lista usuarios.
+	 *
+	 * @return the lista usuarios
+	 */
 	public ArrayList<User> getListaUsuarios() {
 		return this._userList;
 	}
 
+	/**
+	 * Delete.
+	 *
+	 * @param user the user
+	 * @return true, if successful
+	 */
 	public boolean delete(User user) {
 		boolean isCorrect = false;
 		try {
@@ -31,6 +49,12 @@ public class UsersManager {
 		return isCorrect;
 	}
 
+	/**
+	 * Update.
+	 *
+	 * @param user the user
+	 * @return true, if successful
+	 */
 	public boolean update(User user) {
 		boolean isCorrect = false;
 		try {
@@ -50,6 +74,12 @@ public class UsersManager {
 		return isCorrect;
 	}
 
+	/**
+	 * Insert.
+	 *
+	 * @param user the user
+	 * @return true, if successful
+	 */
 	public boolean insert(User user) {
 		boolean isCorrect = false;
 		try {
@@ -64,6 +94,12 @@ public class UsersManager {
 		return isCorrect;
 	}
 
+	/**
+	 * Login.
+	 *
+	 * @param user the user
+	 * @return true, if successful
+	 */
 	public boolean login(User user) {
 		ResultSet result;
 		boolean exists = false;
@@ -89,6 +125,11 @@ public class UsersManager {
 		return exists;
 	}
 
+	/**
+	 * Read all.
+	 *
+	 * @return true, if successful
+	 */
 	public boolean readAll() {
 		ResultSet result;
 		boolean isCorrect = false;

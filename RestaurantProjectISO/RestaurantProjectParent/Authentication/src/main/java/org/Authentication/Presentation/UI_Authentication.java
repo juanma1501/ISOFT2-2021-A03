@@ -21,16 +21,33 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+/**
+ * The Class UI_Authentication.
+ */
 public class UI_Authentication extends JPanel {
+	
+	/** The lbl user name. */
 	private JLabel lblUserName;
+	
+	/** The lbl user pass. */
 	private JLabel lblUserPass;
+	
+	/** The txt name. */
 	private JTextField txtName;
+	
+	/** The password F. */
 	private JPasswordField passwordF;
+	
+	/** The btn enter. */
 	private JButton btnEnter;
 
+	/** The authenticated. */
 	private boolean authenticated = false;
 
+	/** The original color. */
 	private Color originalColor;
+	
+	/** The selected color. */
 	private Color selectedColor = new Color(250, 250, 200);
 
 	/**
@@ -95,30 +112,68 @@ public class UI_Authentication extends JPanel {
 
 	}
 
+	/**
+	 * Gets the autheticated.
+	 *
+	 * @return the autheticated
+	 */
 	public boolean getAutheticated() {
 		return authenticated;
 	}
 
+	/**
+	 * The listener interface for receiving txtFocus events.
+	 * The class that is interested in processing a txtFocus
+	 * event implements this interface, and the object created
+	 * with that class is registered with a component using the
+	 * component's <code>addTxtFocusListener<code> method. When
+	 * the txtFocus event occurs, that object's appropriate
+	 * method is invoked.
+	 *
+	 * @see TxtFocusEvent
+	 */
 	private class TxtFocusListener extends FocusAdapter {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.FocusAdapter#focusGained(java.awt.event.FocusEvent)
+		 */
 		@Override
 		public void focusGained(FocusEvent e) {
 			e.getComponent().setBackground(selectedColor);
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.FocusAdapter#focusLost(java.awt.event.FocusEvent)
+		 */
 		@Override
 		public void focusLost(FocusEvent e) {
 			e.getComponent().setBackground(originalColor);
 		}
 	}
 
+	/**
+	 * Sets the txt name.
+	 *
+	 * @param name the new txt name
+	 */
 	public void setTxtName(String name) {
 		txtName.setText(name);
 	}
 
+	/**
+	 * Sets the password.
+	 *
+	 * @param pass the new password
+	 */
 	public void setPassword(String pass) {
 		passwordF.setText(pass);
 	}
 
+	/**
+	 * Accept.
+	 *
+	 * @return true, if successful
+	 */
 	@SuppressWarnings("deprecation")
 	public boolean accept() {
 		boolean autheticated = false;
@@ -150,7 +205,22 @@ public class UI_Authentication extends JPanel {
 		return autheticated;
 	}
 
+	/**
+	 * The listener interface for receiving btnEnterAction events.
+	 * The class that is interested in processing a btnEnterAction
+	 * event implements this interface, and the object created
+	 * with that class is registered with a component using the
+	 * component's <code>addBtnEnterActionListener<code> method. When
+	 * the btnEnterAction event occurs, that object's appropriate
+	 * method is invoked.
+	 *
+	 * @see BtnEnterActionEvent
+	 */
 	private class BtnEnterActionListener implements ActionListener {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			accept();
 		}
