@@ -18,27 +18,58 @@ import java.awt.event.ActionListener;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
+/**
+ * The Class UI_setTableState.
+ */
 public class UI_setTableState extends JPanel {
+	
+	/** The btn unoccupied. */
 	private JButton btnUnoccupied;
+	
+	/** The btn booked. */
 	private JButton btnBooked;
+	
+	/** The btn occupied. */
 	private JButton btnOccupied;
+	
+	/** The btn processing. */
 	private JButton btnProcessing;
+	
+	/** The btn waitingfood. */
 	private JButton btnWaitingfood;
+	
+	/** The btn served. */
 	private JButton btnServed;
+	
+	/** The btn waitingbill. */
 	private JButton btnWaitingbill;
+	
+	/** The btn paying. */
 	private JButton btnPaying;
+	
+	/** The btn preparation. */
 	private JButton btnPreparation;
 
+	/** The table. */
 	private Table table;
+	
+	/** The id table. */
 	private int idTable;
+	
+	/** The last state. */
 	private States lastState;
 
+	/** The selected button green. */
 	private Color selectedButtonGreen = new Color(0, 255, 0);
 
+	/** The Constant date_formatter. */
 	private static final SimpleDateFormat date_formatter = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 
 	/**
 	 * Create the panel.
+	 *
+	 * @param idTable the id table
+	 * @throws Exception the exception
 	 */
 	public UI_setTableState(int idTable) throws Exception {
 
@@ -144,6 +175,9 @@ public class UI_setTableState extends JPanel {
 		}
 	}
 
+	/**
+	 * Initial state.
+	 */
 	public void initialState() {
 
 		States state;
@@ -151,6 +185,11 @@ public class UI_setTableState extends JPanel {
 		btnStates(state);
 	}
 
+	/**
+	 * Btn states.
+	 *
+	 * @param state the state
+	 */
 	public void btnStates(States state) {
 
 		switch (state) {
@@ -205,10 +244,18 @@ public class UI_setTableState extends JPanel {
 		lastState = state;
 	}
 
+	/**
+	 * Gets the last state.
+	 *
+	 * @return the last state
+	 */
 	public States getLastState() {
 		return this.lastState;
 	}
 
+	/**
+	 * Sets the to initial color.
+	 */
 	public void setToInitialColor() {
 
 		switch (lastState) {
@@ -260,11 +307,31 @@ public class UI_setTableState extends JPanel {
 		}
 	}
 
+	/**
+	 * Sets the id table.
+	 *
+	 * @param idTable the new id table
+	 */
 	public void setIdTable(int idTable) {
 		this.idTable = idTable;
 	}
 
+	/**
+	 * The listener interface for receiving btnAction events.
+	 * The class that is interested in processing a btnAction
+	 * event implements this interface, and the object created
+	 * with that class is registered with a component using the
+	 * component's <code>addBtnActionListener<code> method. When
+	 * the btnAction event occurs, that object's appropriate
+	 * method is invoked.
+	 *
+	 * @see BtnActionEvent
+	 */
 	private class BtnActionListener implements ActionListener {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 
 			String boton = e.getActionCommand().toString();

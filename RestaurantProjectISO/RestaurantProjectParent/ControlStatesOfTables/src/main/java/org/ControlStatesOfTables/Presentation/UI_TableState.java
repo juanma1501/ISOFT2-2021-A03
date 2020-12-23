@@ -7,9 +7,18 @@ import org.ControlBookingTable.Domain.Table;
 
 import java.awt.BorderLayout;
 
+/**
+ * The Class UI_TableState.
+ */
 public class UI_TableState extends JPanel {
+	
+	/** The pnl container. */
 	private JPanel pnlContainer;
+	
+	/** The table. */
 	private Table table;
+	
+	/** The pnls tables. */
 	private JPanel[] pnls_tables;
 
 	/**
@@ -25,6 +34,9 @@ public class UI_TableState extends JPanel {
 
 	}
 
+	/**
+	 * Reload.
+	 */
 	public void reload() {
 		// we remove all the created panels and call the load function again
 		for (int i = pnlContainer.getComponents().length - 1; i >= 0; i++) {
@@ -34,6 +46,9 @@ public class UI_TableState extends JPanel {
 		load();
 	}
 
+	/**
+	 * Load.
+	 */
 	// we will show the state of all the tables in the created panel
 	public void load() {
 		table = new Table();
