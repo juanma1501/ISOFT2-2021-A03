@@ -14,12 +14,24 @@ import javax.swing.table.DefaultTableModel;
 
 import org.ControlBookingTable.Domain.Table;
 
+/**
+ * The Class UI_seeTablesConf.
+ */
 @SuppressWarnings({ "unused", "serial" })
 public class UI_seeTablesConf extends JPanel {
+	
+	/** The scroll pane. */
 	private JScrollPane scrollPane;
+	
+	/** The table tables. */
 	private JTable tableTables;
+	
+	/** The table. */
 	private Table table;
 
+	/**
+	 * Instantiates a new u I see tables conf.
+	 */
 	public UI_seeTablesConf() {
 		setBorder(new TitledBorder(null, "Tables configuration", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		setForeground(Color.LIGHT_GRAY);
@@ -47,6 +59,9 @@ public class UI_seeTablesConf extends JPanel {
 		loadTables();
 	}
 
+	/**
+	 * Load tables.
+	 */
 	public void loadTables() {
 		table = new Table();
 		table.readAll();

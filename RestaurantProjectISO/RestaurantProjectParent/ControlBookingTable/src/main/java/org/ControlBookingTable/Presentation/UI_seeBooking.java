@@ -19,13 +19,28 @@ import java.text.SimpleDateFormat;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * The Class UI_seeBooking.
+ */
 @SuppressWarnings("serial")
 public class UI_seeBooking extends JPanel {
+	
+	/** The buttons pane. */
 	private JPanel buttonsPane;
+	
+	/** The btn cancel. */
 	private JButton btnCancel;
+	
+	/** The scroll pane. */
 	private JScrollPane scrollPane;
+	
+	/** The table bookings. */
 	private JTable tableBookings;
+	
+	/** The booking. */
 	private Booking booking;
+	
+	/** The selected booking. */
 	private boolean selectedBooking;
 
 	/**
@@ -34,6 +49,9 @@ public class UI_seeBooking extends JPanel {
 
 	private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 
+	/**
+	 * Instantiates a new u I see booking.
+	 */
 	@SuppressWarnings("serial")
 	public UI_seeBooking() {
 		selectedBooking = false;
@@ -72,6 +90,9 @@ public class UI_seeBooking extends JPanel {
 		reloadBookings();
 	}
 
+	/**
+	 * Reload bookings.
+	 */
 	public void reloadBookings() {
 		Booking booking = new Booking();
 		try {
@@ -102,16 +123,41 @@ public class UI_seeBooking extends JPanel {
 
 	}
 
+	/**
+	 * Checks if is selected.
+	 *
+	 * @return true, if is selected
+	 */
 	public boolean isSelected() {
 		return this.selectedBooking;
 
 	}
 
+	/**
+	 * Sets the selected.
+	 *
+	 * @param b the new selected
+	 */
 	public void setSelected(boolean b) {
 		this.selectedBooking = b;
 	}
 
+	/**
+	 * The listener interface for receiving tableBookingsMouse events.
+	 * The class that is interested in processing a tableBookingsMouse
+	 * event implements this interface, and the object created
+	 * with that class is registered with a component using the
+	 * component's <code>addTableBookingsMouseListener<code> method. When
+	 * the tableBookingsMouse event occurs, that object's appropriate
+	 * method is invoked.
+	 *
+	 * @see TableBookingsMouseEvent
+	 */
 	private class TableBookingsMouseListener extends MouseAdapter {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.MouseAdapter#mouseClicked(java.awt.event.MouseEvent)
+		 */
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			try {
@@ -127,7 +173,22 @@ public class UI_seeBooking extends JPanel {
 		}
 	}
 
+	/**
+	 * The listener interface for receiving btnCancelAction events.
+	 * The class that is interested in processing a btnCancelAction
+	 * event implements this interface, and the object created
+	 * with that class is registered with a component using the
+	 * component's <code>addBtnCancelActionListener<code> method. When
+	 * the btnCancelAction event occurs, that object's appropriate
+	 * method is invoked.
+	 *
+	 * @see BtnCancelActionEvent
+	 */
 	private class BtnCancelActionListener implements ActionListener {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			if (isSelected()) {
 				try {

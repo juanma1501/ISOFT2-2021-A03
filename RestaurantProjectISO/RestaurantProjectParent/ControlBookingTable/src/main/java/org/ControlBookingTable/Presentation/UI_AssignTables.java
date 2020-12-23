@@ -33,23 +33,54 @@ import java.awt.event.FocusEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * The Class UI_AssignTables.
+ */
 public class UI_AssignTables extends JPanel {
+	
+	/** The lbl name. */
 	private JLabel lblName;
+	
+	/** The txt name. */
 	private JTextField txtName;
+	
+	/** The lbl table. */
 	private JLabel lblTable;
+	
+	/** The cmb tables. */
 	private JComboBox cmbTables;
+	
+	/** The lbl turn lunch dinn. */
 	private JLabel lblTurnLunchDinn;
+	
+	/** The rdbtn lunch. */
 	private JRadioButton rdbtnLunch;
+	
+	/** The rdbtn dinner. */
 	private JRadioButton rdbtnDinner;
+	
+	/** The button group. */
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	
+	/** The lbl turn. */
 	private JLabel lblTurn;
+	
+	/** The cmb turns. */
 	private JComboBox cmbTurns;
+	
+	/** The btn assign. */
 	private JButton btnAssign;
+	
+	/** The lbl clients. */
 	private JLabel lblClients;
+	
+	/** The spn clients. */
 	private JSpinner spnClients;
 
+	/** The bookings. */
 	private UI_seeBooking bookings;
 
+	/** The start color. */
 	private Color start_color;
 	/**
 	 * Create the panel.
@@ -57,6 +88,11 @@ public class UI_AssignTables extends JPanel {
 
 	private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 
+	/**
+	 * Instantiates a new u I assign tables.
+	 *
+	 * @param bookings the bookings
+	 */
 	public UI_AssignTables(UI_seeBooking bookings) {
 		this.bookings = bookings;
 		setBorder(new TitledBorder(null, "Assign table", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -198,20 +234,53 @@ public class UI_AssignTables extends JPanel {
 
 	}
 
+	/**
+	 * The listener interface for receiving colorKey events.
+	 * The class that is interested in processing a colorKey
+	 * event implements this interface, and the object created
+	 * with that class is registered with a component using the
+	 * component's <code>addColorKeyListener<code> method. When
+	 * the colorKey event occurs, that object's appropriate
+	 * method is invoked.
+	 *
+	 * @see ColorKeyEvent
+	 */
 	private class ColorKeyListener extends FocusAdapter {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.FocusAdapter#focusGained(java.awt.event.FocusEvent)
+		 */
 		@Override
 		public void focusGained(FocusEvent e) {
 			start_color = e.getComponent().getBackground();
 			e.getComponent().setBackground(new Color(250, 250, 210));
 		}
 
+		/* (non-Javadoc)
+		 * @see java.awt.event.FocusAdapter#focusLost(java.awt.event.FocusEvent)
+		 */
 		@Override
 		public void focusLost(FocusEvent e) {
 			e.getComponent().setBackground(start_color);
 		}
 	}
 
+	/**
+	 * The listener interface for receiving btnAsignarAction events.
+	 * The class that is interested in processing a btnAsignarAction
+	 * event implements this interface, and the object created
+	 * with that class is registered with a component using the
+	 * component's <code>addBtnAsignarActionListener<code> method. When
+	 * the btnAsignarAction event occurs, that object's appropriate
+	 * method is invoked.
+	 *
+	 * @see BtnAsignarActionEvent
+	 */
 	private class BtnAsignarActionListener implements ActionListener {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 
 			Booking booking = new Booking();

@@ -1,6 +1,27 @@
 
 package org.ControlBookingTable.Domain;
 
+/**
+ * The Enum States.
+ */
 public enum States {
-	UNOCCUPIED, BOOKED, OCCUPIED, PROCESSING, WAITING_FOOD, SERVED, WAITING_BILL, PAYING, PREPARATION
+	
+	/** The unoccupied. */
+	UNOCCUPIED, 
+ /** The booked. */
+ BOOKED, 
+ /** The occupied. */
+ OCCUPIED, 
+ /** The processing. */
+ PROCESSING, 
+ /** The waiting food. */
+ WAITING_FOOD, 
+ /** The served. */
+ SERVED, 
+ /** The waiting bill. */
+ WAITING_BILL, 
+ /** The paying. */
+ PAYING, 
+ /** The preparation. */
+ PREPARATION
 }

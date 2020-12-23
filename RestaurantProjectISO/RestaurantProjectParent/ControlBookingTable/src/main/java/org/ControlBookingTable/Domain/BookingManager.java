@@ -5,17 +5,36 @@ import org.ControlBookingTable.Persistency.Broker;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * The Class BookingManager.
+ */
 public class BookingManager {
+	
+	/** The booking list. */
 	private ArrayList<Booking> _bookingList;
 
+	/**
+	 * Instantiates a new booking manager.
+	 */
 	public BookingManager() {
 		this._bookingList = new ArrayList<Booking>();
 	}
 
+	/**
+	 * Gets the list booking.
+	 *
+	 * @return the list booking
+	 */
 	public ArrayList<Booking> getListBooking() {
 		return this._bookingList;
 	}
 
+	/**
+	 * Delete.
+	 *
+	 * @param aBooking the a booking
+	 * @return true, if successful
+	 */
 	public boolean delete(Booking aBooking) {
 		boolean done = false;
 		try {
@@ -29,6 +48,12 @@ public class BookingManager {
 		return done;
 	}
 
+	/**
+	 * Update.
+	 *
+	 * @param aBooking the a booking
+	 * @return true, if successful
+	 */
 	public boolean update(Booking aBooking) {
 		boolean done = false;
 		try {
@@ -46,6 +71,12 @@ public class BookingManager {
 		return done;
 	}
 
+	/**
+	 * Insert.
+	 *
+	 * @param aBooking the a booking
+	 * @return true, if successful
+	 */
 	public boolean insert(Booking aBooking) {
 		boolean done = false;
 		try {
@@ -62,6 +93,12 @@ public class BookingManager {
 		return done;
 	}
 
+	/**
+	 * Read.
+	 *
+	 * @param aBooking the a booking
+	 * @return true, if successful
+	 */
 	public boolean read(Booking aBooking) {
 		ResultSet result;
 		boolean done = false;
@@ -86,6 +123,11 @@ public class BookingManager {
 		return done;
 	}
 
+	/**
+	 * Read all.
+	 *
+	 * @return true, if successful
+	 */
 	public boolean readAll() {
 		ResultSet result;
 		boolean done = false;
@@ -108,6 +150,12 @@ public class BookingManager {
 		return done;
 	}
 
+	/**
+	 * Last ID.
+	 *
+	 * @param aBooking the a booking
+	 * @return true, if successful
+	 */
 	public boolean lastID(Booking aBooking) {
 		ResultSet result;
 		boolean done = false;

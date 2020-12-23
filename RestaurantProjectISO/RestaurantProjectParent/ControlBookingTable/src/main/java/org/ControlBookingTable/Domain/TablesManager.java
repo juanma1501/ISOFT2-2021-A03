@@ -5,21 +5,45 @@ import org.ControlBookingTable.Persistency.Broker;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * The Class TablesManager.
+ */
 public class TablesManager {
+	
+	/** The tables list. */
 	private ArrayList<Table> _tablesList;
 
+	/**
+	 * Instantiates a new tables manager.
+	 */
 	public TablesManager() {
 		this._tablesList = new ArrayList<Table>();
 	}
 
+	/**
+	 * Sets the tables list.
+	 *
+	 * @param _tablesList the new tables list
+	 */
 	public void set_tablesList(ArrayList<Table> _tablesList) {
 		this._tablesList = _tablesList;
 	}
 
+	/**
+	 * Gets the tables list.
+	 *
+	 * @return the tables list
+	 */
 	public ArrayList<Table> get_tablesList() {
 		return _tablesList;
 	}
 
+	/**
+	 * Delete.
+	 *
+	 * @param aTable the a table
+	 * @return true, if successful
+	 */
 	public boolean delete(Table aTable) {
 		boolean done = false;
 		try {
@@ -33,6 +57,12 @@ public class TablesManager {
 		return done;
 	}
 
+	/**
+	 * Update.
+	 *
+	 * @param aTable the a table
+	 * @return true, if successful
+	 */
 	public boolean update(Table aTable) {
 		boolean done = false;
 		try {
@@ -49,6 +79,12 @@ public class TablesManager {
 		return done;
 	}
 
+	/**
+	 * Insert.
+	 *
+	 * @param aTable the a table
+	 * @return true, if successful
+	 */
 	public boolean insert(Table aTable) {
 		boolean done = false;
 		try {
@@ -63,6 +99,12 @@ public class TablesManager {
 		return done;
 	}
 
+	/**
+	 * Read.
+	 *
+	 * @param aTable the a table
+	 * @return true, if successful
+	 */
 	public boolean read(Table aTable) {
 		boolean done = false;
 		ResultSet result;
@@ -85,6 +127,11 @@ public class TablesManager {
 		return done;
 	}
 
+	/**
+	 * Read all.
+	 *
+	 * @return true, if successful
+	 */
 	public boolean readAll() {
 		boolean done = false;
 		ResultSet result;
