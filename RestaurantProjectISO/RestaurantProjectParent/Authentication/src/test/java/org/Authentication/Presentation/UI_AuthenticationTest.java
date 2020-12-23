@@ -31,62 +31,62 @@ public class UI_AuthenticationTest {
 	public void testConstructor() {
 		try {
 			UI_Authentication ui = new UI_Authentication();
-		}catch(Exception e){
+		} catch (Exception e) {
 			assumeNoException(e);
-			
+
 		}
 	}
-	
+
 	@Test
-	public void testTrueAuthentication(){
+	public void testTrueAuthentication() {
 		UI_Authentication ui = null;
 		try {
 			ui = new UI_Authentication();
 			ui.setTxtName("G-PLEX");
 			ui.setPassword("G-PLEX");
-			
-		}catch(Exception e) {
+
+		} catch (Exception e) {
 			assumeNoException(e);
 		}
 		try {
 			assertTrue(ui.accept());
-		}catch(Exception e) {
+		} catch (Exception e) {
 			assumeNoException(e);
 		}
 	}
-	
+
 	@Test
-	public void testFalseAuthentication(){
+	public void testFalseAuthentication() {
 		UI_Authentication ui = null;
 		try {
 			ui = new UI_Authentication();
 			ui.setTxtName("jjjj");
 			ui.setPassword("jjjj");
-			
-		}catch(Exception e) {
+
+		} catch (Exception e) {
 			assumeNoException(e);
 		}
 		try {
 			assertFalse(ui.accept());
-		}catch(Exception e) {
+		} catch (Exception e) {
 			assumeNoException(e);
 		}
 	}
-	
+
 	@Test
-	public void testFalseAuthentication2(){
+	public void testFalseAuthentication2() {
 		UI_Authentication ui = null;
 		try {
 			ui = new UI_Authentication();
 			ui.setTxtName("");
 			ui.setPassword("");
-			
-		}catch(Exception e) {
+
+		} catch (Exception e) {
 			assumeNoException(e);
 		}
 		try {
 			assertFalse(ui.accept());
-		}catch(Exception e) {
+		} catch (Exception e) {
 			assumeNoException(e);
 		}
 	}

@@ -13,8 +13,6 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import org.Authentication.Domain.User;
-import org.Authentication.Domain.UsersManager;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -34,8 +32,6 @@ public class UI_Authentication extends JPanel {
 
 	private Color originalColor;
 	private Color selectedColor = new Color(250, 250, 200);
-
-	private JFrame frm;
 
 	/**
 	 * Create the panel.
@@ -97,10 +93,6 @@ public class UI_Authentication extends JPanel {
 			add(btnEnter, gbc_btnEnter);
 		}
 
-	}
-
-	public void setFrm(JFrame frm) {
-		this.frm = frm;
 	}
 
 	public boolean getAutheticated() {

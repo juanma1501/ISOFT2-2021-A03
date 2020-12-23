@@ -1,6 +1,5 @@
 package org.AuxiliarMain.Presentation;
 
-import static org.junit.Assert.*;
 import static org.junit.Assume.assumeNoException;
 
 import org.junit.After;
@@ -31,7 +30,7 @@ public class UI_MainTest {
 	public void test() {
 		try {
 			UI_Main main = new UI_Main();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			assumeNoException(e);
 		}
 	}
