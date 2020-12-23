@@ -22,22 +22,48 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * The Class UI_Main.
+ */
 public class UI_Main {
 
+	/** The frm. */
 	private JFrame frm;
+	
+	/** The tabbed pane. */
 	private JTabbedPane tabbedPane;
+	
+	/** The tab table booking. */
 	private JPanel tabTableBooking;
+	
+	/** The tab states. */
 	private JPanel tabStates;
+	
+	/** The pnl states. */
 	private UI_TableState pnlStates;
+	
+	/** The pnl see table conf. */
 	private UI_seeTablesConf pnlSeeTableConf;
+	
+	/** The pnl see booking. */
 	private UI_seeBooking pnlSeeBooking;
+	
+	/** The pnl assign table. */
 	private UI_AssignTables pnlAssignTable;
+	
+	/** The tab authentication. */
 	private JPanel tabAuthentication;
+	
+	/** The pnl authentication. */
 	private UI_Authentication pnlAuthentication;
+	
+	/** The btn enter. */
 	private JButton btnEnter;
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -153,7 +179,22 @@ public class UI_Main {
 		}
 	}
 
+	/**
+	 * The listener interface for receiving tabbedPaneMouse events.
+	 * The class that is interested in processing a tabbedPaneMouse
+	 * event implements this interface, and the object created
+	 * with that class is registered with a component using the
+	 * component's <code>addTabbedPaneMouseListener<code> method. When
+	 * the tabbedPaneMouse event occurs, that object's appropriate
+	 * method is invoked.
+	 *
+	 * @see TabbedPaneMouseEvent
+	 */
 	private class TabbedPaneMouseListener extends MouseAdapter {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.MouseAdapter#mouseClicked(java.awt.event.MouseEvent)
+		 */
 		@Override
 		public void mouseClicked(MouseEvent e) {
 
@@ -167,7 +208,22 @@ public class UI_Main {
 
 	}
 
+	/**
+	 * The listener interface for receiving btnEnterAction events.
+	 * The class that is interested in processing a btnEnterAction
+	 * event implements this interface, and the object created
+	 * with that class is registered with a component using the
+	 * component's <code>addBtnEnterActionListener<code> method. When
+	 * the btnEnterAction event occurs, that object's appropriate
+	 * method is invoked.
+	 *
+	 * @see BtnEnterActionEvent
+	 */
 	private class BtnEnterActionListener implements ActionListener {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		public void actionPerformed(ActionEvent e) {
 			if (pnlAuthentication.accept()) {
 				tabbedPane.setEnabledAt(2, true);
